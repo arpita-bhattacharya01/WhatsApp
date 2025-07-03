@@ -1,5 +1,5 @@
-{
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
+ {
+  "buildCommand": "expo export:web",
+  "outputDirectory": "web-build"
   "framework": "vite"
 }
