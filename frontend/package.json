@@ -9,8 +9,10 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "expo lint",
-     "build": "webpack --config webpack.config.js"
-  },
+     "build": "webpack --config webpack.config.js",
+    "expo": "^50.x.x",
+"react-native-web": "^0.19.x"
+},
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
     "@react-native-async-storage/async-storage": "^2.2.0",
