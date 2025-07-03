@@ -72,7 +72,7 @@ export default function LoginScreen() {
       return
     }
     try {
-      const response = await axios.post('https://chatapp-isun.onrender.com/api/auth/signup', {
+      const response = await axios.post('https://whatsapp-tmg9.onrender.com/api/auth/signup', {
         name,
         email,
         password,

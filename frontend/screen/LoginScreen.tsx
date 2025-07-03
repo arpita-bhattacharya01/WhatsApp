@@ -31,7 +31,7 @@ export default function LoginScreen() {
   const handleLogin = async () => {
     console.log("Handle login clicked")
     try {
-      const response = await axios.post('https://chatapp-isun.onrender.com/api/auth/login', {
+      const response = await axios.post('https://whatsapp-tmg9.onrender.com/api/auth/login', {
         email,
         password: passwordInput,
       });

@@ -28,7 +28,7 @@ export const ForgetPassword = () => {
 
   const handleSendOtp = async () => {
   try {
-    const checkEmailRes = await axios.post('https://chatapp-isun.onrender.com/api/auth/check-email-exist', {
+    const checkEmailRes = await axios.post('https://whatsapp-tmg9.onrender.com/api/auth/check-email-exist', {
       email: email,
     });
 
@@ -39,7 +39,7 @@ export const ForgetPassword = () => {
     }
 
     
-    await axios.post('https://chatapp-isun.onrender.com/api/auth/send-otp', {
+    await axios.post('https://whatsapp-tmg9.onrender.com/api/auth/send-otp', {
       email: email,
     });
 
@@ -56,7 +56,7 @@ export const ForgetPassword = () => {
     console.log("Verify OTP clicked");
     try {
       const otpClean = otp.trim();
-      const res = await axios.post('https://chatapp-isun.onrender.com/api/auth/verify-otp', {
+      const res = await axios.post('https://whatsapp-tmg9.onrender.com/api/auth/verify-otp', {
         email: email,
         otp: otpClean,
       });
@@ -78,7 +78,7 @@ export const ForgetPassword = () => {
       return;
     }
     try {
-      const response = await axios.post('https://chatapp-isun.onrender.com/api/auth/update-password', {
+      const response = await axios.post('https://whatsapp-tmg9.onrender.com/api/auth/update-password', {
         email,
         password,
       });

@@ -219,14 +219,14 @@ const ChatScreen = () => {
     marginBottom: keyboardHeight > 0 ? keyboardHeight : Platform.select({
       ios: 0,
       android: 20,
-    }),
+    }),   
   };
 
   // Fetch user list
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('https://chatapp-isun.onrender.com/api/auth/users');
+        const response = await axios.get('https://whatsapp-tmg9.onrender.com/api/auth/users');
         setUserList(response.data);
       } catch (error) {
         console.error('Error fetching users:', error);
@@ -332,12 +332,12 @@ const ChatScreen = () => {
 
     try {
       // Get recipient's public key
-      const recipientRes = await fetch(`https://chatapp-isun.onrender.com/api/auth/user/${selectedUser.id}/public-key`);
+      const recipientRes = await fetch(`https://whatsapp-tmg9.onrender.com/api/auth/user/${selectedUser.id}/public-key`);
       const recipientData = await recipientRes.json();
       const recipientPublicKey = recipientData.publicKey;
 
       // Get my public key
-      const myRes = await fetch(`https://chatapp-isun.onrender.com/api/auth/user/${myUser.id}/public-key`);
+      const myRes = await fetch(`https://whatsapp-tmg9.onrender.com/api/auth/user/${myUser.id}/public-key`);
       const myData = await myRes.json();
       const myPublicKey = myData.publicKey;
 
@@ -430,11 +430,11 @@ const ChatScreen = () => {
 
       try {
         // Fetch chat history
-        const response = await axios.get(`https://chatapp-isun.onrender.com/api/auth/get-chat-data/${room}`);
+        const response = await axios.get(`https://whatsapp-tmg9.onrender.com/api/auth/get-chat-data/${room}`);
         const history = response.data;
 
         // Fetch encrypted private key
-        const res = await fetch(`https://chatapp-isun.onrender.com/api/auth/user/${myUser.id}/private-key`);
+        const res = await fetch(`https://whatsapp-tmg9.onrender.com/api/auth/user/${myUser.id}/private-key`);
         const { encryptedPrivateKey } = await res.json();
 
         // Format and decrypt private key
@@ -500,7 +500,7 @@ const ChatScreen = () => {
           }
 
           // Received message - decrypt it
-          const res = await fetch(`https://chatapp-isun.onrender.com/api/auth/user/${myUser.id}/private-key`);
+          const res = await fetch(`https://whatsapp-tmg9.onrender.com/api/auth/user/${myUser.id}/private-key`);
           const { encryptedPrivateKey } = await res.json();
 
           console.log("this is the encrypted private key in handler", encryptedPrivateKey);
